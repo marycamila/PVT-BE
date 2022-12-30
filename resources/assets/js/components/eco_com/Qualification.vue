@@ -614,7 +614,7 @@ export default {
         allowOutsideClick: () => !this.$swal.isLoading()
       });
     },
-    async saveRecalificacion() {
+    async save() {
       await axios
         .patch(`/eco_com_recalificacion`,this.ecoCom)
         .then(response => {
@@ -638,7 +638,7 @@ export default {
                         if (result.value) {
                           console.log(result.value);
                             this.show_spinner = true;
-                            axios.delete('/delete_quota_aid_mortuary',{
+                            axios.delete('/delete_discount_type_aid',{
                             params: { idEcoCom:this.ecoComId }
                           })
                         .then(response => {
